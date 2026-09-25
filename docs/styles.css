@@ -46,3 +46,45 @@
 .line-chart{height:68px}
 .crypto-coins div{min-height:19px}
 @media(max-width:680px){.crypto-window{height:89%;padding-top:11px;padding-bottom:7px}}
+
+
+/* Money Field Guide and RollLog portfolio card artwork */
+.money-visual{background:#e8dfc7}
+.money-window{width:80%;height:82%;padding:15px 19px 12px;background:#fbf8ef;color:#292a25;box-shadow:0 18px 45px #675c3920;transform:rotate(-1.2deg);overflow:hidden;border:1px solid #ffffffaa}
+.money-top{display:flex;align-items:center;gap:7px;padding-bottom:8px;border-bottom:1px solid #e7e3d7;font:700 7px var(--display);letter-spacing:.06em}
+.money-mark{width:19px;height:19px;display:grid;place-items:center;background:#334739;color:#d7efa6;border-radius:50%;font:700 9px var(--display)}
+.money-top small{display:block;margin-top:2px;color:#88897d;font:5px var(--mono);letter-spacing:.06em}
+.money-top>b{margin-left:auto;font:12px var(--sans);color:#647451}
+.money-copy{padding:13px 1px 5px}
+.money-copy>span,.money-chart>span{color:#8b8b7d;font:5px var(--mono);letter-spacing:.08em}
+.money-copy strong{display:block;margin-top:5px;font:600 21px/1.07 var(--display);letter-spacing:-.055em}
+.money-copy strong i{font-weight:500;color:#899779;font-style:normal}
+.money-copy small{display:block;margin-top:5px;color:#77786f;font-size:6px;line-height:1.5}
+.money-chart{height:65px;position:relative;margin-top:2px;border-bottom:1px solid #e8e4d8}
+.money-chart>span{position:absolute;left:0;top:0}
+.money-chart svg{position:absolute;left:0;bottom:3px;width:100%;height:48px;overflow:visible}
+.money-chart path{fill:none;stroke:#879d69;stroke-width:2}
+.money-chart circle{fill:#c6e986}
+.money-topics{display:flex;justify-content:space-between;gap:4px;padding-top:8px}
+.money-topics span{padding:5px 6px;border:1px solid #e5e2d8;color:#66695e;font:5px var(--mono);letter-spacing:.02em}
+.rolllog-visual{background:#ddd7ed}
+.rolllog-window{width:80%;height:82%;padding:14px 18px 12px;background:#faf8f2;color:#292923;box-shadow:0 18px 45px #51466d24;transform:rotate(1.3deg);overflow:hidden;border:1px solid #ffffffaa}
+.rolllog-top{display:flex;align-items:center;gap:7px;padding-bottom:8px;border-bottom:1px solid #e9e5dc}
+.rolllog-mark{width:20px;height:20px;display:grid;place-items:center;border-radius:6px;background:#393b35;color:#d2c7f1;font:700 10px var(--display)}
+.rolllog-top>span:nth-child(2){font:700 8px var(--display);letter-spacing:.08em}
+.rolllog-top small{display:block;margin-top:2px;color:#8e8c83;font:5px var(--mono);letter-spacing:.06em}
+.rolllog-top>b{margin-left:auto;color:#858478;font:5px var(--mono);letter-spacing:.06em}
+.rolllog-map{height:114px;position:relative;margin:6px 0 0}
+.rolllog-map svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.rolllog-map svg path{fill:none;stroke:#c4bdd8;stroke-width:2.2}
+.map-node{position:absolute;min-width:43px;padding:6px 5px;border:1px solid #e5e0d6;background:#fffdf8;text-align:center;color:#57584f;font:5px var(--mono);letter-spacing:.03em;box-shadow:0 2px 8px #3733260b}
+.node-a{left:1%;top:54%}.node-b{left:27%;top:11%;background:#e9e3f5}.node-c{left:52%;top:54%;background:#e7eddc}.node-d{right:1%;top:11%}.node-e{left:31%;bottom:0%}.node-f{right:3%;bottom:2%;background:#e9e3f5}
+.rolllog-path{padding-top:7px;border-top:1px solid #e9e5dc}
+.rolllog-path>span,.rolllog-path small{display:block;color:#8c8a80;font:5px var(--mono);letter-spacing:.07em}
+.rolllog-path>b{display:block;margin:4px 0;color:#393b35;font:600 8px var(--display)}
+.rolllog-path>b i{padding:0 3px;color:#a49bbd;font-style:normal}
+.rolllog-path small{font-size:4px}
+.project-title-link{color:inherit;text-decoration:none}
+.project-title-link:hover{text-decoration:underline;text-decoration-color:#aaa99f;text-underline-offset:3px}
+@media(max-width:900px){.money-window,.rolllog-window{width:85%;padding-left:14px;padding-right:14px}.money-copy strong{font-size:19px}}
+@media(max-width:680px){.money-window,.rolllog-window{width:80%;height:82%;padding:14px 16px 11px}.money-topics span{padding:5px 4px;font-size:4px}}
