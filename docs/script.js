@@ -45,3 +45,55 @@ navigation.querySelectorAll("a").forEach((link) => {
   });
 });
 
+
+const projectCards = [...document.querySelectorAll(".project-card")];
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (projectCards.length && "IntersectionObserver" in window) {
+  if (!prefersReducedMotion) document.documentElement.classList.add("motion-ready");
+
+  const inView = new Set();
+  const updateHighlightedCard = () => {
+    const center = window.innerHeight / 2;
+    const candidates = [...inView];
+    candidates.sort((left, right) => {
+      const leftRect = left.getBoundingClientRect();
+      const rightRect = right.getBoundingClientRect();
+      const leftDistance = Math.abs(leftRect.top + leftRect.height / 2 - center);
+      const rightDistance = Math.abs(rightRect.top + rightRect.height / 2 - center);
+      return leftDistance - rightDistance;
+    });
+
+    projectCards.forEach((card) => {
+      card.classList.toggle("is-current", card === candidates[0]);
+    });
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        inView.add(entry.target);
+        entry.target.classList.add("is-visible");
+      } else {
+        inView.delete(entry.target);
+      }
+    });
+    updateHighlightedCard();
+  }, {
+    rootMargin: "-12% 0px -28% 0px",
+    threshold: [0, 0.15, 0.4, 0.7],
+  });
+
+  projectCards.forEach((card) => observer.observe(card));
+
+  let scrollFrame = 0;
+  const scheduleHighlightUpdate = () => {
+    if (scrollFrame) return;
+    scrollFrame = window.requestAnimationFrame(() => {
+      scrollFrame = 0;
+      updateHighlightedCard();
+    });
+  };
+  window.addEventListener("scroll", scheduleHighlightUpdate, { passive: true });
+  window.addEventListener("resize", scheduleHighlightUpdate);
+}
