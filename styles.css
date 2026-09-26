@@ -88,3 +88,15 @@
 .project-title-link:hover{text-decoration:underline;text-decoration-color:#aaa99f;text-underline-offset:3px}
 @media(max-width:900px){.money-window,.rolllog-window{width:85%;padding-left:14px;padding-right:14px}.money-copy strong{font-size:19px}}
 @media(max-width:680px){.money-window,.rolllog-window{width:80%;height:82%;padding:14px 16px 11px}.money-topics span{padding:5px 4px;font-size:4px}}
+
+/* Scroll reveal and active project focus */
+.project-card{--card-accent:#b6c98f}
+.project-blinkr{--card-accent:#91aa81}.project-crypto{--card-accent:#b5a6e5}.project-matrank{--card-accent:#d5a37d}.project-pitwall{--card-accent:#91aa81}.project-money-guide{--card-accent:#a0b479}.project-rolllog{--card-accent:#a99acb}
+.project-card .project-visual{transition:box-shadow .35s ease,filter .35s ease,outline-color .35s ease}
+.project-card.is-current .project-visual{outline:2px solid var(--card-accent);outline-offset:3px;box-shadow:0 15px 38px #25251e1a}
+.project-card.is-current .project-meta h3{text-decoration:underline;text-decoration-color:var(--card-accent);text-decoration-thickness:3px;text-underline-offset:5px}
+.motion-ready .project-card{opacity:0;transform:translateY(24px) scale(.99);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1)}
+.motion-ready .project-card:nth-child(even){transition-delay:90ms}
+.motion-ready .project-card.is-visible{opacity:1;transform:translateY(0) scale(1)}
+.motion-ready .project-card.is-visible.is-current{transform:translateY(-5px) scale(1)}
+@media(prefers-reduced-motion:reduce){.motion-ready .project-card{opacity:1;transform:none;transition:none}.project-card .project-visual{transition:none}.project-card.is-current .project-visual{box-shadow:none}}
